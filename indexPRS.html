@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Price Reporting Standard — Commodity Benchmark &amp; Regulatory Compliance</title>
+<meta name="description" content="An independent advisory resource on commodity and financial benchmark compliance. Mapping IOSCO, UK & EU benchmark regulation, and the Chinese regulatory environment to operational reality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F6F2E9;
+  --cream-dark: #EDE8DC;
+  --cream-mid: #E3DDD0;
+  --cream-deep: #D8D0C0;
+  --charcoal: #1A1814;
+  --charcoal-mid: #3A3830;
+  --charcoal-light: #787060;
+  --charcoal-faint: #A8A298;
+  --accent: #5C4A1E;
+  --accent-warm: #8B7340;
+  --accent-pale: #C4A96A;
+  --rule: rgba(26,24,20,0.1);
+  --rule-mid: rgba(26,24,20,0.18);
+  --rule-strong: rgba(26,24,20,0.28);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Navigation ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 5vw;
+  background: rgba(246,242,233,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--rule-mid);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.nav-links a:hover { color: var(--charcoal); }
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ── Masthead ── */
+.masthead {
+  padding: 11rem 5vw 5rem;
+  text-align: center;
+  position: relative;
+}
+
+.masthead-eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.masthead-eyebrow::before, .masthead-eyebrow::after {
+  content: '';
+  width: 1.5rem;
+  height: 0.5px;
+  background: var(--accent);
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8.4vw, 7.4rem);
+  line-height: 0.96;
+  font-weight: 300;
+  letter-spacing: -0.018em;
+  color: var(--charcoal);
+  margin-bottom: 1.6rem;
+}
+
+.masthead-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.masthead-descriptor {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--charcoal-mid);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+
+/* ── Regulatory context strip ── */
+.reg-strip {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 3.6rem 5vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  border-top: 0.5px solid var(--rule-mid);
+  border-bottom: 0.5px solid var(--rule-mid);
+}
+
+.reg-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-framework-type {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-pale);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reg-framework-type::before {
+  content: '';
+  width: 1.25rem;
+  height: 0.5px;
+  background: var(--accent-pale);
+}
+
+.reg-framework {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+.reg-status {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(246,242,233,0.55);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 860px) {
+  .reg-strip { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.6rem 6vw; }
+}
+
+/* ── Section conventions ── */
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 7rem 5vw 5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 0.5px solid var(--rule-strong);
+  padding-bottom: 1.4rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.section-count {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  font-weight: 400;
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* ── Analysis cards ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 0.5px solid var(--rule);
+}
+
+.analysis-card {
+  padding: 2.4rem 2rem 2.4rem 0;
+  cursor: pointer;
+  border-right: 0.5px solid var(--rule);
+  border-bottom: 0.5px solid var(--rule);
+  transition: background 0.4s, padding 0.4s;
+  position: relative;
+}
+
+.analysis-card:not(:first-child) {
+  padding-left: 2rem;
+}
+
+.analysis-card:last-child { border-right: none; }
+
+.analysis-card:hover {
+  background: var(--cream-dark);
+}
+
+.analysis-card.featured {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 2.4rem 2rem;
+  border-right: 0.5px solid var(--charcoal-mid);
+}
+
+.analysis-card.featured:hover {
+  background: var(--charcoal-mid);
+}
+
+.card-num {
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+  font-weight: 400;
+}
+
+.analysis-card.featured .card-num {
+  color: var(--accent-pale);
+}
+
+.card-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  margin-bottom: 1.4rem;
+  font-weight: 400;
+}
+
+.analysis-card.featured .card-tag {
+  color: rgba(246,242,233,0.55);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  line-height: 1.13;
+  font-weight: 400;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.005em;
+}
+
+.card-excerpt {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--charcoal-mid);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.analysis-card.featured .card-excerpt {
+  color: rgba(246,242,233,0.7);
+}
+
+.card-read {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.analysis-card.featured .card-read {
+  color: var(--accent-pale);
+}
+
+.card-read::after {
+  content: '→';
+  transition: transform 0.3s;
+}
+
+.analysis-card:hover .card-read::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 920px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+  .analysis-card { border-right: none; padding: 2.4rem 0; }
+  .analysis-card:not(:first-child) { padding-left: 0; }
+  .analysis-card.featured { padding: 2.4rem 6vw; margin: 0 -5vw; }
+}
+
+/* ── Article expanded ── */
+.article-expanded {
+  display: none;
+  background: var(--cream-dark);
+  margin: 4rem -5vw 0;
+  padding: 5.5rem 8vw;
+  border-top: 0.5px solid var(--rule-strong);
+  border-bottom: 0.5px solid var(--rule-strong);
+  position: relative;
+  animation: articleIn 0.5s ease;
+}
+
+.article-expanded.open { display: block; }
+
+@keyframes articleIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.article-close {
+  position: absolute;
+  top: 2rem;
+  right: 5vw;
+  background: none;
+  border: 0.5px solid var(--rule-strong);
+  color: var(--charcoal-mid);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.article-close:hover {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-color: var(--charcoal);
+}
+
+.article-meta {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+}
+
+.article-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 4.4vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.08;
+  margin-bottom: 3rem;
+  max-width: 850px;
+  color: var(--charcoal);
+}
+
+.article-body {
+  max-width: 720px;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal-mid);
+  font-weight: 300;
+}
+
+.article-body p {
+  margin-bottom: 1.4rem;
+}
+
+.article-body p.lead {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: -0.005em;
+  margin: 3.2rem 0 1.4rem;
+  line-height: 1.2;
+}
+
+.article-body h4 {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 2.5rem 0 0.9rem;
+}
+
+.article-body strong {
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.article-body em {
+  font-style: italic;
+  color: var(--charcoal);
+}
+
+.article-body ul {
+  margin: 1.2rem 0 1.6rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-body li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.7;
+}
+
+.article-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.7rem;
+  height: 0.5px;
+  background: var(--accent);
+}
+
+.article-body hr {
+  border: none;
+  border-top: 0.5px solid var(--rule-strong);
+  margin: 2.6rem 0;
+  width: 30%;
+}
+
+.article-rule {
+  width: 80px;
+  height: 0.5px;
+  background: var(--accent);
+  margin: 2rem 0;
+}
+
+.article-footer-note {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--rule-strong);
+  font-size: 0.78rem;
+  color: var(--charcoal-light);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+@media (max-width: 720px) {
+  .article-expanded { padding: 4rem 6vw; }
+  .article-close { top: 1.4rem; right: 6vw; }
+}
+
+/* ── Frameworks & Resources ── */
+.frameworks-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 0.5px solid var(--rule);
+}
+
+.framework-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 2.2rem 2rem 2.2rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+}
+
+.framework-item:nth-child(even) {
+  padding-left: 2rem;
+  padding-right: 0;
+  border-right: none;
+}
+
+.framework-icon {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  font-style: italic;
+  flex-shrink: 0;
+  width: 2.4rem;
+}
+
+.framework-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.005em;
+  color: var(--charcoal);
+}
+
+.framework-desc {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--charcoal-mid);
+  margin-bottom: 0.85rem;
+  font-weight: 300;
+}
+
+.framework-status {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  font-weight: 400;
+}
+
+.framework-status.live { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .frameworks-list { grid-template-columns: 1fr; }
+  .framework-item, .framework-item:nth-child(even) {
+    padding: 2rem 0;
+    border-right: none;
+  }
+}
+
+/* ── Intelligence tracker (tabbed) ── */
+.intel-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 0.5px solid var(--rule-strong);
+  margin-bottom: 0;
+}
+
+.intel-tab {
+  background: transparent;
+  border: none;
+  padding: 1.05rem 1.6rem 1.05rem 0;
+  margin-right: 2.4rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--charcoal-faint);
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.intel-tab:hover { color: var(--charcoal-mid); }
+
+.intel-tab.active {
+  color: var(--charcoal);
+}
+
+.intel-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5px;
+  left: 0;
+  right: 1.6rem;
+  height: 1.5px;
+  background: var(--accent);
+}
+
+.intel-tab .tab-count {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.intel-panel { display: none; }
+.intel-panel.active { display: block; }
+
+.intel-list {
+  border-top: none;
+}
+
+.intel-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 130px;
+  gap: 2rem;
+  padding: 1.6rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  font-size: 0.92rem;
+  align-items: baseline;
+}
+
+.intel-date {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.intel-text {
+  color: var(--charcoal-mid);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.intel-text strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+.intel-text .intel-source {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--charcoal-light);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.intel-text .intel-source a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(92,74,30,0.35);
+  transition: border-color 0.25s;
+}
+
+.intel-text .intel-source a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.intel-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  text-align: right;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .intel-tab { margin-right: 1.4rem; padding-right: 0.4rem; font-size: 0.66rem; }
+  .intel-tab.active::after { right: 0.4rem; }
+  .intel-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding: 1.6rem 0;
+  }
+  .intel-tag { text-align: left; }
+}
+
+/* ── The practice ── */
+.practice-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  padding-top: 1rem;
+}
+
+.practice-bio h3 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--charcoal);
+}
+
+.practice-bio .role {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.practice-bio p {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+.practice-services {
+  background: var(--cream-dark);
+  padding: 2.6rem 2.2rem;
+  border-radius: 2px;
+  border-left: 2px solid var(--accent);
+}
+
+.practice-services .services-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+}
+
+.service-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  font-size: 0.92rem;
+}
+
+.service-line:last-child { border-bottom: none; }
+
+.service-line .service-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  width: 1.6rem;
+}
+
+.service-line .service-name {
+  color: var(--charcoal);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+@media (max-width: 860px) {
+  .practice-wrapper { grid-template-columns: 1fr; gap: 2.6rem; }
+}
+
+/* ── Contact ── */
+.contact-section {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 6rem 5vw;
+  margin-top: 4rem;
+}
+
+.contact-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-section .section-label {
+  color: var(--accent-pale);
+  margin-bottom: 1.6rem;
+  display: block;
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+  color: var(--cream);
+}
+
+.contact-sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(246,242,233,0.7);
+  font-weight: 300;
+  max-width: 480px;
+}
+
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.4rem;
+  padding: 1.05rem 0;
+  border-bottom: 0.5px solid rgba(246,242,233,0.15);
+  font-size: 0.92rem;
+}
+
+.contact-row:first-child { border-top: 0.5px solid rgba(246,242,233,0.15); }
+
+.contact-key {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-pale);
+  font-weight: 400;
+  padding-top: 0.18em;
+}
+
+.contact-val {
+  color: var(--cream);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.contact-val a {
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(246,242,233,0.4);
+  transition: border 0.25s;
+}
+
+.contact-val a:hover { border-bottom-color: var(--accent-pale); }
+
+@media (max-width: 860px) {
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-row { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--cream);
+  padding: 3rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--charcoal-light);
+  font-weight: 300;
+  border-top: 0.5px solid var(--rule);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+
+/* ── Selection ── */
+::selection {
+  background: var(--accent);
+  color: var(--cream);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <a href="#top" class="nav-brand">The Price Reporting Standard</a>
+  <ul class="nav-links">
+    <li><a onclick="scrollTo('analysis')">Analysis</a></li>
+    <li><a onclick="scrollTo('frameworks')">Frameworks</a></li>
+    <li><a onclick="scrollTo('intelligence')">Intelligence</a></li>
+    <li><a onclick="scrollTo('practice')">Practice</a></li>
+    <li><a onclick="scrollTo('contact')">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Masthead ── -->
+<header class="masthead" id="top">
+  <p class="masthead-eyebrow reveal">An independent advisory resource</p>
+  <h1 class="masthead-title reveal delay-1">The <em>Price Reporting</em><br>Standard</h1>
+  <p class="masthead-descriptor reveal delay-2">Mapping regulatory requirements to operational reality — for commodity and financial benchmark administrators and the institutions that depend on them.</p>
+</header>
+
+<!-- ── Regulatory context strip ── -->
+<div class="reg-strip">
+  <div class="reg-item reveal">
+    <div class="reg-framework-type">Voluntary Global Standard</div>
+    <div class="reg-framework">IOSCO Frameworks</div>
+    <div class="reg-status">The voluntary global standards — IOSCO Principles for Oil Price Reporting Agencies (2012) and IOSCO Principles for Financial Benchmarks (2013). The reference standard for benchmark governance worldwide, applied through independent annual assurance review.</div>
+  </div>
+  <div class="reg-item reveal delay-1">
+    <div class="reg-framework-type">Statutory Regulation</div>
+    <div class="reg-framework">UK &amp; EU Benchmark Regulation</div>
+    <div class="reg-status">The statutory frameworks in transition. UK BMR moving to the proposed Specified Authorised Benchmarks Regime. EU BMR reform reducing scope to systemic benchmarks. Third-country transitional provisions extended to 2030.</div>
+  </div>
+  <div class="reg-item reveal delay-2">
+    <div class="reg-framework-type">Cross-Border Compliance</div>
+    <div class="reg-framework">China Regulatory Environment</div>
+    <div class="reg-status">NDRC price reporting rules governing commodity price publication to Chinese officials. Data sovereignty framework — DSL, PIPL, CSL, Counter-Espionage Law — applied to cross-border commodity market data.</div>
+  </div>
+</div>
+
+<!-- ── Analysis ── -->
+<section class="section" id="analysis">
+  <div class="section-header">
+    <span class="section-label">Current analysis</span>
+    <span class="section-count">Two pieces · April 2026</span>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- SABR — featured -->
+    <div class="analysis-card featured reveal" onclick="toggleArticle('sabr')">
+      <div class="card-num">— 01</div>
+      <div class="card-tag">SABR · Designation</div>
+      <h2 class="card-title">The SABR designation question every commodity PRA should already be modelling</h2>
+      <p class="card-excerpt">Most reading the consultation as relief. The firms with internal designation likelihood assessments will be positioned when HMT publishes the final framework. The firms without will react.</p>
+      <div class="card-read">Read analysis</div>
+    </div>
+
+    <!-- IOSCO as a lens -->
+    <div class="analysis-card reveal delay-1" onclick="toggleArticle('iosco')">
+      <div class="card-num">— 02</div>
+      <div class="card-tag">IOSCO · Cross-domain</div>
+      <h2 class="card-title">IOSCO as a lens — the four design questions every regulated reporting regime answers</h2>
+      <p class="card-excerpt">Regulated reporting regimes look different on the surface. Strip them back and the same four design questions keep appearing. IOSCO compliance is not a niche framework — it is a transferable analytical grammar.</p>
+      <div class="card-read">Read analysis</div>
+    </div>
+
+    <!-- Forthcoming -->
+    <div class="analysis-card reveal delay-2">
+      <div class="card-num">— 03</div>
+      <div class="card-tag">Forthcoming</div>
+      <h2 class="card-title">A third analysis piece is in development</h2>
+      <p class="card-excerpt">The Price Reporting Standard publishes new analysis on a continuous build cadence. The next piece will cover a third dimension of commodity benchmark compliance.</p>
+      <div class="card-read" style="opacity: 0.45;">In preparation</div>
+    </div>
+  </div>
+
+  <!-- ── SABR expanded article ── -->
+  <article class="article-expanded" id="article-sabr">
+    <button class="article-close" onclick="closeArticle('sabr')" aria-label="Close article">✕</button>
+    <div class="article-meta">April 2026 · SABR Analysis · ~2,000 words</div>
+    <h2 class="article-heading">The SABR designation question every commodity PRA should already be modelling</h2>
+    <div class="article-body">
+
+      <p class="lead">Every commodity PRA's compliance function should currently be positioning an internal designation likelihood assessment against the Specified Authorised Benchmarks Regime. The firms that have done this work will be ready when designation criteria become public — methodologies documented, oversight evidenced, audit trails intact, and a defensible case for the benchmarks they intend to anchor. The firms that have not will be retrofitting their compliance architecture against a standard the FCA is actively writing, in a market where the most-referenced commodity prices are being claimed by the administrators who got there first.</p>
+
+      <p>This is not theoretical. SABR removes the universal authorisation regime that currently applies to all benchmarks under BMR. It introduces a designation framework that will concentrate regulatory recognition around the benchmarks the FCA judges systemically important. And it gives the FCA fresh discretion to write the firm-facing requirements for designated administrators — without the Annex II commodity-specific provisions that exist today. The administrators who are best prepared to demonstrate compliance maturity will shape what those requirements look like in practice. The administrators who are unprepared will be measured against them.</p>
+
+      <p><em>So what should compliance leadership be thinking about right now?</em></p>
+
+      <h3>Mapping the portfolio against designation likelihood</h3>
+
+      <p>The factors relevant to designation, as set out in the consultation, can be assessed across three dimensions — with systemic significance emerging as the conclusion drawn from them.</p>
+
+      <p><strong>Assessment-level liquidity.</strong> Two questions sit here. How active is the underlying physical market — measured in transaction volume, frequency, and breadth of participants? And how robust is the data flow into the methodology — the number of price points captured, the diversity of contributors, and the ability of the assessment process to function in volatile or thin conditions? A benchmark built on a liquid market with poor data capture is weaker than one built on a less liquid market with comprehensive data capture. Both layers need to be tested.</p>
+
+      <p><strong>Breadth of dependence.</strong> How embedded is the benchmark in the contractual ecosystem? This is the test of how widely the assessment is referenced — in physical supply contracts, hedging programmes, financial settlement, and risk management frameworks. The audit trail of contractual dependence is the evidence the FCA will weigh against the substitution question: if this benchmark were withdrawn, how disruptive would the substitution process be?</p>
+
+      <p><strong>Financial instrument referencing.</strong> How directly does the benchmark connect to regulated financial markets? Does it settle exchange-traded derivatives? Is it written into ISDA documentation? Does it anchor structured products or feature in cleared OTC swaps? This dimension tests proximity to the regulated financial system specifically, which is distinct from breadth of dependence — a benchmark may be widely referenced in physical contracts without ever settling a financial instrument, and conversely a benchmark may settle a derivative contract without commanding broad commercial dependence. Both contribute to systemic significance, but they generate different evidence and engage the FCA's mandate to different degrees.</p>
+
+      <p>Systemic significance is the conclusion the FCA will draw from these three inputs taken together — but it is not a sum. It is a profile. A benchmark meeting the threshold typically scores highly on at least two of the three dimensions, with the third providing supporting evidence. No single dimension is sufficient on its own. A profile that is moderately positive across all three is generally insufficient. The FCA's judgement will be holistic but not arithmetic — and the difference between a designation candidate and a non-candidate is often whether the profile is strong on the dimensions that matter for the specific market the benchmark serves.</p>
+
+      <p style="background: var(--cream-mid); padding: 1.6rem 1.8rem; border-left: 2px solid var(--accent-pale); margin: 2rem 0; font-style: italic; font-family: var(--font-display); font-size: 1.05rem; color: var(--charcoal-mid);">[Visual placeholder — radar chart showing three illustrative benchmarks plotted against the three dimensions: a tier one benchmark with strong extension across all three, a tier two benchmark with mixed profile, and a tier three benchmark with consistently low profile.]</p>
+
+      <p>This piece offers one approach to mapping the portfolio. Other compliance functions will reach the same conclusions through different routes — weighting the dimensions differently, segmenting by commodity class, or running the assessment at the methodology level rather than the benchmark level. The framework that follows is illustrative, not prescriptive. What matters is that the assessment is being done.</p>
+
+      <p>A PRA running this assessment ends with a tiered map — and each tier carries different implications.</p>
+
+      <p><strong>Tier one — strong designation case.</strong> The benchmark profile meets the systemic significance threshold across multiple dimensions. The implication is statutory: the compliance function is preparing for FCA designation. Methodology documentation, oversight evidence, audit trail integrity, and governance maturity must be defensible against FCA requirements that will be written fresh — without the Annex II commodity-specific provisions to fall back on. The work here is preparing a designation case the FCA can accept with confidence.</p>
+
+      <p><strong>Tier two — judgement territory.</strong> The benchmark profile is mixed. Some dimensions support the designation case, others do not. The implication is strategic. The firm faces a choice: invest in strengthening the dimensions where the case is weak, or position the benchmark for voluntary IOSCO alignment as the primary quality signal. The decision depends on the benchmark's commercial value, the cost of defending designation, and what the user base expects of the assessment. This is where the most strategic compliance work sits — and where the most operationally interesting decisions are made.</p>
+
+      <p><strong>Tier three — falling out of statutory scope.</strong> The benchmark profile does not meet designation criteria. Statutory regulation no longer applies. The compliance question becomes whether to maintain voluntary IOSCO alignment as a market quality signal, right-size governance to reflect non-designated status, or in some cases retire benchmarks that no longer justify the architecture. This is where the most efficiency can be captured — and where the most honest internal conversations need to be had about which benchmarks the firm should continue to publish.</p>
+
+      <p>The map is the foundation for every subsequent decision in the rest of this piece.</p>
+
+      <h3>The clustering dynamic and what designation does to it</h3>
+
+      <p>The commodity benchmark market is already clustered. Multiple PRAs publish assessments of the same underlying physical markets, with users referencing competing benchmarks for the same commodity. Platts anchors Brent. Argus and Platts both publish WTI assessments in different reference forms. Iron ore 62 percent Fe has the Platts IODEX, with competing assessments from Fastmarkets and Argus. LME copper sits with the exchange itself for the official settlement, with PRA assessments layered around it. These clusters exist because users want competing reference points and because the underlying markets support methodological diversity.</p>
+
+      <p>What is less commonly observed is that within each cluster there is already a hierarchy. Platts dominates oil. Fastmarkets dominates certain metals concentrates. Argus dominates Russian crude grades. The dominance is built on tenure of assessment, first-mover advantage, methodology robustness, breadth of contractual referencing, methodology type — whether the price is assessed or derived — and the integrity of any conversion logic where the price is derived from upstream inputs. The same dimensions that drive designation likelihood. The hierarchy is not new. SABR will not create it. SABR will re-stratify it.</p>
+
+      <p>The mechanism by which this re-stratification happens has parallels in recent regulatory history. When SONIA replaced GBP LIBOR, regulatory recognition created an immediate hierarchy among sterling interest rate benchmarks that was absent under the previous regime. Competing alternatives became commercially difficult to sustain once SONIA had statutory weight. Under the EU BMR equivalence framework, benchmarks from jurisdictions that have not been granted equivalence have proven difficult to use in regulated EU institutional contexts — not because they are prohibited, but because the alternative pathways are cumbersome enough that many overseas administrators have effectively been excluded from the EU institutional market. In both cases, regulatory recognition operated as a competitive variable, not just a compliance requirement.</p>
+
+      <p>The same dynamic will apply under SABR, but within the existing commodity benchmark clusters rather than across the market as a whole. Designation will become a new layer of competitive positioning within clusters that are already stratified. Where two PRAs publish materially comparable assessments of the same physical market and only one is designated, the non-designated alternative does not disappear. Subscribers, however, will increasingly face questions from their own internal audit functions, risk committees, and counterparties about why they rely on a price reference that does not carry the regulatory standing of the alternative. Those questions accumulate.</p>
+
+      <p>This is where market-driven expectation meets statutory recognition. In an unregulated environment users still demand governance assurance — they just demand it through quality signals rather than regulatory authorisation. Under SABR, both signals will be operating in parallel. Designation will be the primary signal in tier one. Voluntary IOSCO alignment will be the primary signal in tier three. In tier two, the choice between pursuing designation and positioning for voluntary alignment will itself become a competitive variable that users observe and weigh.</p>
+
+      <p>A PRA assessing its position needs to understand both where it currently sits in the existing cluster hierarchy and how designation will shift that position. A PRA dominant in an existing cluster but unprepared for designation may find its competitive lead eroded by a smaller competitor that has done the work. A PRA in a secondary position within a cluster may find designation a route to closing the gap — if the underlying compliance architecture supports it.</p>
+
+      <h3>The committee agenda — turning the consultation into an introspective review</h3>
+
+      <p>The SABR consultation creates an unusual opportunity for compliance leadership: a regulator-prompted reason to conduct the structural review of the price portfolio that arguably should already have been underway. The mechanism for that review is the benchmark oversight committee itself, supported by formal agenda items that translate the consultation's implications into examinable questions about the firm's current architecture.</p>
+
+      <p>The questions below are organised by tier — reflecting the tonal reality of each. Tier one is categorical: the compliance posture either holds or it does not. Tier two is deliberative: the strategic decisions that will shape positioning for the next decade are made here. Tier three is opportunity-shaped: with statutory regulation removed, the question is what the firm chooses to do with the latitude that creates.</p>
+
+      <h4>Tier one — categorical questions for designation candidates</h4>
+      <ul>
+        <li>Is the methodology documentation current, complete, and consistent with operational practice — and can that consistency be evidenced in writing?</li>
+        <li>Has the oversight framework been independently assured within the last twelve months, and is the assurance report defensible against fresh FCA scrutiny?</li>
+        <li>If designation came tomorrow, what does the evidence pack contain — and is each component ready for production without remedial work?</li>
+        <li>Where are the gaps between documented compliance and operational reality, and what is the cost and timeline to close them?</li>
+        <li>Who within the firm is accountable for designation readiness, and is that accountability documented at executive committee level?</li>
+      </ul>
+
+      <h4>Tier two — deliberative questions for judgement-territory benchmarks</h4>
+      <ul>
+        <li>Where the designation case is mixed, do we invest in strengthening the weak dimensions or position the benchmark for voluntary IOSCO alignment as the primary quality signal?</li>
+        <li>What is the commercial value of the benchmark to the firm, and does that value justify the cost of defending designation?</li>
+        <li>What does the user base actually expect of this assessment going forward — statutory recognition, voluntary IOSCO alignment, or simply continued methodological credibility?</li>
+        <li>If we choose voluntary alignment, what governance overhead do we maintain and what do we release — and how is that decision communicated externally?</li>
+        <li>How are these decisions sequenced relative to the wider portfolio, and which require executive committee escalation rather than oversight committee resolution?</li>
+      </ul>
+
+      <h4>Tier three — opportunity-shaped questions for non-designated benchmarks</h4>
+      <ul>
+        <li>With statutory regulation removed, what does the firm choose to do with the latitude this creates — maintain, right-size, consolidate, or retire?</li>
+        <li>Are there benchmarks in the portfolio that have been carried by regulatory inertia rather than commercial logic, and is now the moment to address them?</li>
+        <li>Where governance overhead has historically been distributed evenly across the portfolio, what differentiated approach makes sense in a tiered regime?</li>
+        <li>Could selected non-designated benchmarks be positioned as voluntary IOSCO-aligned premium products — signalling quality assurance to the user base in a market where statutory recognition no longer exists?</li>
+        <li>What investment in market intelligence, methodology innovation, or new benchmark development becomes possible if compliance overhead releases at this tier?</li>
+      </ul>
+
+      <p style="margin-top: 1.6rem;"><em>The questions are the agenda. The discipline is in answering them.</em></p>
+
+      <h3>Three operational decisions and their options</h3>
+
+      <p>The committee work converges on three decisions every PRA needs to make in the next six to twelve months. Each presents three viable options, and each option carries different commercial, regulatory, and reputational consequences.</p>
+
+      <h4>Designation positioning — what the firm chooses to do about its tier one benchmarks</h4>
+      <ul>
+        <li>Actively pursue designation as a competitive moat, accepting the compliance burden in exchange for the credibility advantage and the protection it offers against subscriber loss to designated alternatives.</li>
+        <li>Remain neutral and respond to FCA assessment as it develops, preserving optionality but ceding the ability to shape how designation criteria are applied to the firm's specific benchmarks.</li>
+        <li>Argue against designation for specific benchmarks where the burden outweighs the credibility benefit, accepting the strategic risk that comes with declining statutory recognition.</li>
+      </ul>
+      <p>The first option requires confidence in the underlying compliance architecture. The third requires a credible alternative quality signal — typically robust voluntary IOSCO alignment — that the user base recognises as comparable.</p>
+
+      <h4>Tier three governance posture — what to do with benchmarks falling out of statutory scope</h4>
+      <ul>
+        <li>Maintain current IOSCO alignment as a voluntary quality signal, accepting governance overhead beyond regulatory requirement in exchange for unambiguous market positioning.</li>
+        <li>Right-size to a lighter framework proportionate to non-designated status, reducing cost while preserving baseline credibility for the user base.</li>
+        <li>Consolidate or retire benchmarks that no longer justify the architecture, treating SABR as the moment for an honest portfolio review.</li>
+      </ul>
+      <p>Each option signals something different to subscribers and to the wider market. The first signals premium quality. The second signals proportionate stewardship. The third signals strategic discipline.</p>
+
+      <h4>Audit scope — how the next assurance cycle is structured</h4>
+      <ul>
+        <li>Maintain the current annual assurance scope across the full portfolio, treating SABR as a regulatory transition rather than an audit re-architecture event.</li>
+        <li>Tier the assurance review to match the designation hierarchy, with separate scopes for designated and voluntary streams within a single engagement.</li>
+        <li>Commission distinct engagements for the two streams, potentially with different auditors, allowing the firm to optimise auditor expertise against the specific demands of each stream.</li>
+      </ul>
+      <p>The choice affects engagement cost, evidence packaging, and how IOSCO compliance is communicated externally. It also affects the firm's relationship with its assurance provider — and whether that relationship needs to be re-tendered as the regulatory landscape changes.</p>
+
+      <p><em>These are not abstract questions. Each requires a position, a budget, and a defensible rationale.</em></p>
+
+      <h3>Identifying the redundancies</h3>
+
+      <p>SABR creates the opportunity to look at the compliance architecture honestly. The current BMR framework treats every benchmark identically. The designation regime permits — and effectively requires — differentiation.</p>
+
+      <p>A well-run compliance function uses the transition to right-size. Investment goes where designation demands it. Resource releases where deregulation permits it. Governance overhead built for tier three benchmarks under universal regulation is overengineered in the new framework. Governance built for tier one benchmarks in a designation environment may be under-engineered. Both gaps need to be identified and closed.</p>
+
+      <p>The PRAs that capture this opportunity will emerge from the transition leaner, more strategically focused, and with a clearer compliance narrative for users than the ones that simply transcribe their existing architecture into the new regime.</p>
+
+      <div class="article-rule"></div>
+
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.25rem; line-height: 1.5; color: var(--charcoal); margin-top: 2rem;">The PRAs that emerge well from SABR will not be the ones with the most polished consultation responses. They will be the ones whose committees were already running these assessments, whose portfolios were already mapped, and whose action plans were already drafted before the final framework was published.</p>
+
+      <p class="article-footer-note">Karim Bihi · Independent Commodity Benchmark &amp; Regulatory Compliance Specialist</p>
+    </div>
+  </article>
+
+  <!-- ── IOSCO expanded article ── -->
+  <article class="article-expanded" id="article-iosco">
+    <button class="article-close" onclick="closeArticle('iosco')" aria-label="Close article">✕</button>
+    <div class="article-meta">April 2026 · IOSCO Cross-Domain Analysis · ~1,150 words</div>
+    <h2 class="article-heading">IOSCO as a lens — the four design questions every regulated reporting regime answers</h2>
+    <div class="article-body">
+
+      <p class="lead">Regulated reporting regimes look different on the surface. Benchmarks. Energy prices. Legal accounts. Trade data. The substantive content varies, the regulators vary, the legal foundations vary. But strip them back and the same four design questions keep appearing: who controls the methodology, how is data integrity assured, who can challenge the output, and what happens when it goes wrong.</p>
+
+      <p>That framing makes IOSCO feel like a lens rather than a niche. The IOSCO Principles for Oil Price Reporting Agencies and the IOSCO Principles for Financial Benchmarks were written specifically for benchmark administrators, but the design logic they encode is the logic of every regulated reporting regime that takes itself seriously. A practitioner who has built and audited IOSCO compliance has, in effect, internalised an analytical framework that maps directly onto reporting regimes across financial services, professional conduct, energy markets, and trade transparency.</p>
+
+      <p>This piece walks through the four questions, applying each first to IOSCO and then across other regulated reporting domains, to demonstrate the framework in action.</p>
+
+      <h3>1. Who controls the methodology?</h3>
+
+      <p>In IOSCO terms, this is Principle 14 — methodology transparency, the documented procedure by which a benchmark is constructed, the change control process, and the independence of the methodology owner from commercial interests. A robust IOSCO compliance posture requires methodology to be published, version-controlled, reviewed periodically, and protected from unilateral change by commercially conflicted parties.</p>
+
+      <p>The same question structures every other regulated reporting regime. Under the SRA Accounts Rules, the methodology is the framework for handling client money — how it is segregated, reconciled, and reported — and control sits with the firm's COFA, with rule changes determined externally by the SRA. Under Ofgem's regulated price reporting for energy suppliers, methodology covers tariff construction, cost allocation, and customer-facing disclosure, with control increasingly centralised at the regulator as the price cap regime has matured. Under EMIR trade reporting, methodology defines what data must be captured, in what format, and within what timeframe — with technical standards owned by ESMA in the EU and the FCA in the UK.</p>
+
+      <p>The question is the same across all four. The answer determines whether the regime is genuinely independent of the parties whose conduct it measures.</p>
+
+      <h3>2. How is data integrity assured?</h3>
+
+      <p>For IOSCO, this is the cluster of principles around data sufficiency, contributor due diligence, and assessment process integrity. The benchmark administrator must demonstrate that the data underpinning the assessment is verified, the contributors are vetted, and the process for combining inputs into a published number is auditable end to end.</p>
+
+      <p>The parallel in the SRA framework is the requirement for independent reconciliation of client account balances and the role of the Reporting Accountant in providing external verification. The integrity of legal accounts depends not on assertion but on documented reconciliation against bank records and external review. In the energy sector, Ofgem's data integrity requirements rest on metering, settlement systems, and the elaborate machinery of MRA and BSC arrangements that ensure the data flowing into supplier reporting is verifiable upstream. EMIR trade reporting depends on ARM and trade repository validation, transaction matching across counterparties, and the evolving role of UTI and UPI standards in ensuring data identity across the reporting chain.</p>
+
+      <p>In every case, the underlying principle is the same: <em>a regulated report is only as credible as the verifiability of the data behind it.</em></p>
+
+      <h3>3. Who can challenge the output?</h3>
+
+      <p>IOSCO requires a documented complaints procedure, an independent oversight function, and external assurance review. A subscriber, contributor, or affected party who believes a benchmark has been constructed incorrectly must have a route to challenge it that is genuinely accessible and genuinely independent of the publishing function.</p>
+
+      <p>The same architectural requirement appears across regimes. SRA professional conduct review allows complaints about solicitor conduct to be escalated to the SRA itself, with the Solicitors Disciplinary Tribunal sitting above as the independent adjudicator. Ofgem maintains the energy ombudsman scheme as the independent challenge route for consumers who dispute supplier billing or reporting. EMIR provides for trade data error correction protocols and competent authority intervention where reported data is found to be defective.</p>
+
+      <p>Challenge mechanisms are the bond of credibility for any reporting regime. They are also the architectural feature most often built thinly — present on paper, weak in practice. The genuine independence of the challenge function is the test that distinguishes a robust regime from a performative one.</p>
+
+      <h3>4. What happens when it goes wrong?</h3>
+
+      <p>For IOSCO, breach response involves regulatory engagement, methodology suspension where appropriate, and structured remediation that preserves the integrity of historical published data. The governance framework specifies who authorises a suspension, how it is communicated, and how the published record is maintained through the disruption.</p>
+
+      <p>The SRA equivalent is the intervention regime — the formal mechanism by which the SRA can take over a firm's client account where breach is established, with clear protocols for client money protection and documented remediation. Ofgem's Supplier of Last Resort process is the equivalent in the energy market — the framework that allows orderly transition of customers when a supplier fails. EMIR's response architecture covers reporting suspension, error correction at the trade repository level, and competent authority enforcement against persistent reporting failures.</p>
+
+      <p>Across all four regimes, the design question is whether the regime can absorb a failure without compromising the integrity of the system as a whole. The strength of the failure response is the test of whether the architecture is genuinely robust or merely cosmetically compliant.</p>
+
+      <h3>The transferable framework</h3>
+
+      <p>These four questions — methodology control, data integrity, challenge mechanisms, failure response — are the architectural skeleton of every regulated reporting regime that functions. A practitioner who has built and audited compliance against the IOSCO Principles has not learned a niche framework. They have learned the universal grammar of regulated reporting, expressed in one specific dialect.</p>
+
+      <div class="article-rule"></div>
+
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.25rem; line-height: 1.5; color: var(--charcoal); margin-top: 2rem;">That is why mastery of IOSCO transfers. The lens applies across financial services regulation, professional conduct supervision, energy market oversight, and trade transparency. The substantive expertise differs by domain. The analytical framework is the same.</p>
+
+      <p class="article-footer-note">Karim Bihi · Independent Commodity Benchmark &amp; Regulatory Compliance Specialist</p>
+    </div>
+  </article>
+
+</section>
+
+<!-- ── Frameworks & Resources ── -->
+<section class="section" id="frameworks">
+  <div class="section-header">
+    <span class="section-label">Frameworks &amp; resources</span>
+    <span class="section-count">Operational tools · Continuous build</span>
+  </div>
+
+  <div class="frameworks-list">
+    <div class="framework-item reveal">
+      <div class="framework-icon">19</div>
+      <div>
+        <div class="framework-title">IOSCO Self-Assessment Tool</div>
+        <div class="framework-desc">Interactive assessment of a benchmark governance framework against all 19 IOSCO Principles. Gap summary with prioritised remediation guidance, designed for use ahead of an annual assurance review.</div>
+        <div class="framework-status">Coming soon</div>
+      </div>
+    </div>
+    <div class="framework-item reveal delay-1">
+      <div class="framework-icon">↗</div>
+      <div>
+        <div class="framework-title">SABR Designation Mapping Guide</div>
+        <div class="framework-desc">A structured method for assessing a benchmark portfolio against likely SABR designation criteria — the three-dimensional analysis applied at portfolio level.</div>
+        <div class="framework-status">Coming soon</div>
+      </div>
+    </div>
+    <div class="framework-item reveal">
+      <div class="framework-icon">⊕</div>
+      <div>
+        <div class="framework-title">Oversight Committee Design Framework</div>
+        <div class="framework-desc">Structure, composition, terms of reference, and operating cadence for a compliant IOSCO oversight committee. Written from operational experience inside a regulated PRA.</div>
+        <div class="framework-status">Coming soon</div>
+      </div>
+    </div>
+    <div class="framework-item reveal delay-1">
+      <div class="framework-icon">审</div>
+      <div>
+        <div class="framework-title">NDRC Audit Methodology Overview</div>
+        <div class="framework-desc">The structure of an independent NDRC price reporting audit — what is examined, how evidence is presented, and what Western PRAs with Chinese coverage consistently underestimate.</div>
+        <div class="framework-status">Coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: 2.6rem; font-size: 0.86rem; color: var(--charcoal-light); font-style: italic; font-family: var(--font-display); max-width: 600px;">Frameworks are added on a continuous build cadence as primary-source analysis is completed. The IOSCO Self-Assessment Tool is the next deliverable.</p>
+</section>
+
+<!-- ── Intelligence ── -->
+<section class="section" id="intelligence">
+  <div class="section-header">
+    <span class="section-label">PRA intelligence</span>
+    <span class="section-count">January 2025 — present</span>
+  </div>
+
+  <div class="intel-tabs" role="tablist">
+    <button class="intel-tab active" data-tab="audits" onclick="switchIntelTab('audits')" role="tab">PRA audits <span class="tab-count">04</span></button>
+    <button class="intel-tab" data-tab="regulatory" onclick="switchIntelTab('regulatory')" role="tab">Regulatory changes <span class="tab-count">06</span></button>
+  </div>
+
+  <!-- Tab 1: PRA Audits -->
+  <div class="intel-panel active" id="intel-audits" role="tabpanel">
+    <div class="intel-list">
+
+      <div class="intel-row reveal">
+        <div class="intel-date">17 Nov 2025</div>
+        <div class="intel-text">
+          <strong>ICIS</strong> announces successful completion of its 13th annual independent assurance review against the IOSCO PRA Principles. External review carried out by BDO LLP. Aligns with EU BMR Annex II audit requirements.
+          <span class="intel-source">Source: <a href="https://www.icis.com/explore/press-releases/icis-passes-iosco-audit-2025/" target="_blank" rel="noopener">ICIS press release</a></span>
+        </div>
+        <div class="intel-tag">IOSCO · BDO</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">9 Oct 2025</div>
+        <div class="intel-text">
+          <strong>Argus Media</strong> completes its 14th external assurance review against the IOSCO PRA Principles. PricewaterhouseCoopers LLP examined Argus' policies and processes across crude oil, oil products, LPG, chemicals, coal, natural gas, biofuels, biomass, metals, fertilizers and agricultural markets.
+          <span class="intel-source">Source: <a href="https://www.argusmedia.com/en/about-argus/media-centre/press-releases/argus-iosco-benchmark-review-compliance" target="_blank" rel="noopener">Argus Media press release</a></span>
+        </div>
+        <div class="intel-tag">IOSCO · PwC</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">8 Sep 2025</div>
+        <div class="intel-text">
+          <strong>S&amp;P Dow Jones Indices</strong> completes its 12th annual review of adherence to the IOSCO Principles for Financial Benchmarks. Independent global accounting firm reviewed S&amp;P DJI's index governance regime, control framework, and the separation of governance from commercial activities.
+          <span class="intel-source">Source: <a href="https://press.spglobal.com/2025-09-08-S-P-Dow-Jones-Indices-Completes-Its-Annual-Review-of-Adherence-with-IOSCO-Principles-for-Financial-Benchmarks-2025" target="_blank" rel="noopener">S&amp;P Global press release</a></span>
+        </div>
+        <div class="intel-tag">IOSCO PFB</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">17 Jul 2025</div>
+        <div class="intel-text">
+          <strong>Fastmarkets</strong> completes its annual independent assurance review against the IOSCO PRA Principles, conducted by BDO LLP. Review period 1 April 2024 to 31 May 2025. Scope covers metals and mining, forest products, and agricultural markets, including benchmarks administered by Fastmarkets Benchmark Administration Oy under EU BMR.
+          <span class="intel-source">Source: <a href="https://www.fastmarkets.com/insights/fastmarkets-completes-annual-iosco-assurance-review/" target="_blank" rel="noopener">Fastmarkets press release</a></span>
+        </div>
+        <div class="intel-tag">IOSCO · BDO</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 2: Regulatory Changes -->
+  <div class="intel-panel" id="intel-regulatory" role="tabpanel">
+    <div class="intel-list">
+
+      <div class="intel-row reveal">
+        <div class="intel-date">19 Mar 2026</div>
+        <div class="intel-text">
+          <strong>IOSCO</strong> publishes consultation report on Good Practices concerning OTC commodity derivatives markets. Focus on strengthening implementation of Principles 12, 15 and 16 in relation to data collection, beneficial ownership, intervention powers and information-sharing. Comments due 19 June 2026.
+          <span class="intel-source">Source: <a href="https://www.iosco.org/v2/publications/?subsection=public_reports" target="_blank" rel="noopener">IOSCO publications register</a> — Ref CR/01/2026</span>
+        </div>
+        <div class="intel-tag">IOSCO</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">11 Mar 2026</div>
+        <div class="intel-text">
+          <strong>ISDA, GFXD, UK Finance and LMA</strong> submit joint response to HMT on the SABR proposal. Industry associations stress that designation criteria should be unambiguous and avoid over-designation. HMT consultation closes the same day.
+          <span class="intel-source">Source: <a href="https://www.isda.org/2026/03/11/isda-gfxd-uk-finance-lma-respond-to-hmt-on-uk-bmr-reform" target="_blank" rel="noopener">ISDA news release</a></span>
+        </div>
+        <div class="intel-tag">UK SABR</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">1 Jan 2026</div>
+        <div class="intel-text">
+          <strong>EU BMR amendments take effect.</strong> Regulation (EU) 2025/914 narrows scope to critical and significant benchmarks, EU Climate Transition and Paris-Aligned benchmarks, and certain commodity benchmarks. Estimated 80–90% reduction in administrators in scope. Third-country benchmarks outside scope can be freely used by EU supervised entities.
+          <span class="intel-source">Source: <a href="https://finance.ec.europa.eu/news/benchmarks-2025-01-30_en" target="_blank" rel="noopener">European Commission</a></span>
+        </div>
+        <div class="intel-tag">EU BMR</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">17 Dec 2025</div>
+        <div class="intel-text">
+          <strong>HM Treasury</strong> launches consultation on the Specified Authorised Benchmarks Regime (SABR) to repeal and replace the UK BMR. Designation by HMT on FCA advice, scope limited to systemically important benchmarks, removal of Annex II commodity-specific provisions. FCA welcomes the consultation on 18 December. Closed 11 March 2026.
+          <span class="intel-source">Source: <a href="https://www.gov.uk/government/consultations/future-regulatory-regime-for-benchmarks-and-benchmark-administrators" target="_blank" rel="noopener">GOV.UK consultation page</a></span>
+        </div>
+        <div class="intel-tag">UK SABR</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">3 Nov 2025</div>
+        <div class="intel-text">
+          <strong>IOSCO</strong> publishes its final report on ESG Indices as Benchmarks (FR/15/2025). Comparative analysis of ESG benchmarks against the IOSCO Principles for Financial Benchmarks, with vulnerabilities identified across data integrity, methodology transparency, and accountability.
+          <span class="intel-source">Source: <a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD804.pdf" target="_blank" rel="noopener">IOSCO final report (PDF)</a></span>
+        </div>
+        <div class="intel-tag">IOSCO</div>
+      </div>
+
+      <div class="intel-row reveal">
+        <div class="intel-date">8 Jun 2025</div>
+        <div class="intel-text">
+          <strong>EU BMR Amending Regulation</strong> (Regulation (EU) 2025/914) enters into force, with substantive amendments applying from 1 January 2026. Adopted by the European Parliament and Council on 7 May 2025 following political agreement reached in December 2024.
+          <span class="intel-source">Source: <a href="https://finance.ec.europa.eu/news/benchmarks-2025-01-30_en" target="_blank" rel="noopener">European Commission</a></span>
+        </div>
+        <div class="intel-tag">EU BMR</div>
+      </div>
+
+    </div>
+  </div>
+
+  <p style="margin-top: 2.6rem; font-size: 0.86rem; color: var(--charcoal-light); font-style: italic; font-family: var(--font-display); max-width: 600px;">A live record of independent IOSCO assurance reviews and material regulatory changes affecting commodity and financial benchmark administrators. Each entry is verifiable and linked to a primary source.</p>
+</section>
+
+<!-- ── The Practice ── -->
+<section class="section" id="practice">
+  <div class="section-header">
+    <span class="section-label">The practice</span>
+    <span class="section-count">Karim Bihi · Principal</span>
+  </div>
+
+  <div class="practice-wrapper">
+    <div class="practice-bio reveal">
+      <h3>Karim Bihi</h3>
+      <p class="role">Independent Commodity Benchmark &amp; Regulatory Compliance Specialist</p>
+      <p>The Price Reporting Standard is an independent advisory practice operating at the intersection of commodity benchmark governance, IOSCO assurance, and cross-jurisdictional regulatory analysis.</p>
+      <p>The principal practitioner has held senior compliance positions inside a regulated price reporting agency — leading the IOSCO assurance programme, designing the oversight committee architecture, and acting as the lead point of contact for the NDRC audit of price reporting activity in China. The practice carries that operational experience into independent advisory work.</p>
+      <p>Engagements span permanent senior compliance roles, contractor placements with PRAs and financial benchmark administrators, and direct advisory work for institutions navigating IOSCO assurance, UK and EU benchmark regulation, and the Chinese regulatory environment.</p>
+    </div>
+
+    <div class="practice-services reveal delay-1">
+      <div class="services-label">Areas of practice</div>
+      <div class="service-line">
+        <div class="service-num">01</div>
+        <div class="service-name">IOSCO assurance preparation, oversight committee design, and methodology governance</div>
+      </div>
+      <div class="service-line">
+        <div class="service-num">02</div>
+        <div class="service-name">SABR designation mapping and tiered compliance architecture for commodity PRAs</div>
+      </div>
+      <div class="service-line">
+        <div class="service-num">03</div>
+        <div class="service-name">NDRC price reporting audit preparation and Chinese regulatory engagement</div>
+      </div>
+      <div class="service-line">
+        <div class="service-num">04</div>
+        <div class="service-name">Cross-border compliance under DSL, PIPL, CSL, and Counter-Espionage Law</div>
+      </div>
+      <div class="service-line">
+        <div class="service-num">05</div>
+        <div class="service-name">Benchmark governance for new and existing commodity assessment portfolios</div>
+      </div>
+      <div class="service-line">
+        <div class="service-num">06</div>
+        <div class="service-name">Compliance business analysis — translating regulation into operational systems and procedures</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <span class="section-label">Contact</span>
+      <h2 class="contact-heading">Available for senior roles &amp; engagements.</h2>
+      <p class="contact-sub">Open to permanent compliance leadership positions, contractor engagements with PRAs and financial benchmark administrators, and direct advisory work across UK, EU, and China regulatory matters.</p>
+    </div>
+    <div class="contact-rows reveal delay-1">
+      <div class="contact-row">
+        <div class="contact-key">Email</div>
+        <div class="contact-val"><a href="mailto:karim@thepricereportingstandard.co.uk">karim@thepricereportingstandard.co.uk</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Specialism</div>
+        <div class="contact-val">Commodity benchmark &amp; regulatory compliance</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Availability</div>
+        <div class="contact-val">Permanent roles &amp; contractor engagements</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Location</div>
+        <div class="contact-val">London, UK</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Jurisdictions</div>
+        <div class="contact-val">UK · EU · China</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-left">The Price Reporting Standard</div>
+  <div class="footer-right">© 2026 Karim Bihi — Independent Commodity Benchmark &amp; Regulatory Compliance</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleArticle(id) {
+  const el = document.getElementById('article-' + id);
+  if (!el) return;
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.article-expanded').forEach(a => a.classList.remove('open'));
+  if (!isOpen) {
+    el.classList.add('open');
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+}
+
+function closeArticle(id) {
+  document.getElementById('article-' + id)?.classList.remove('open');
+}
+
+function switchIntelTab(tab) {
+  document.querySelectorAll('.intel-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.intel-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.intel-tab[data-tab="' + tab + '"]')?.classList.add('active');
+  document.getElementById('intel-' + tab)?.classList.add('active');
+}
+</script>
+</body>
+</html>
