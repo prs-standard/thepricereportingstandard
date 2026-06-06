@@ -539,7 +539,7 @@ nav {
   color: var(--cream);
   border-radius: 2px;
   padding: 3.4rem 3.2rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
   display: grid;
   grid-template-columns: 1.55fr 1fr;
   gap: 3.5rem;
@@ -629,7 +629,7 @@ nav {
   height: 0.5px;
   background: var(--accent-pale);
 }
-.tool-feature-download {
+.tool-feature-engage {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
@@ -644,12 +644,15 @@ nav {
   padding: 0.95rem 1.5rem;
   border-radius: 2px;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  background: none;
+  font-family: var(--font-body);
 }
-.tool-feature-download::after {
-  content: '\2193';
+.tool-feature-engage::after {
+  content: '→';
   font-size: 0.9rem;
 }
-.tool-feature-download:hover {
+.tool-feature-engage:hover {
   background: var(--accent-pale);
   color: var(--charcoal);
   border-color: var(--accent-pale);
@@ -672,74 +675,6 @@ nav {
     border-top: 0.5px solid rgba(246,242,233,0.18);
     padding-left: 0;
     padding-top: 2rem;
-  }
-}
-
-.frameworks-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 0.5px solid var(--rule);
-}
-
-.framework-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
-  padding: 2.2rem 2rem 2.2rem 0;
-  border-bottom: 0.5px solid var(--rule);
-  border-right: 0.5px solid var(--rule);
-}
-
-.framework-item:nth-child(even) {
-  padding-left: 2rem;
-  padding-right: 0;
-  border-right: none;
-}
-
-.framework-icon {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--accent);
-  line-height: 1;
-  font-style: italic;
-  flex-shrink: 0;
-  width: 2.4rem;
-}
-
-.framework-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.005em;
-  color: var(--charcoal);
-}
-
-.framework-desc {
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: var(--charcoal-mid);
-  margin-bottom: 0.85rem;
-  font-weight: 300;
-}
-
-.framework-status {
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--charcoal-light);
-  font-weight: 400;
-}
-
-.framework-status.live { color: var(--accent); }
-
-@media (max-width: 720px) {
-  .frameworks-list { grid-template-columns: 1fr; }
-  .framework-item, .framework-item:nth-child(even) {
-    padding: 2rem 0;
-    border-right: none;
   }
 }
 
@@ -767,7 +702,6 @@ nav {
 }
 
 .intel-tab:hover { color: var(--charcoal-mid); }
-
 .intel-tab.active { color: var(--charcoal); }
 
 .intel-tab.active::after {
@@ -782,7 +716,6 @@ nav {
 
 .intel-panel { display: none; }
 .intel-panel.active { display: block; }
-
 .intel-list { border-top: none; }
 
 .intel-row {
@@ -901,9 +834,7 @@ nav {
   font-weight: 300;
 }
 
-.author-bio p:last-child {
-  margin-bottom: 0;
-}
+.author-bio p:last-child { margin-bottom: 0; }
 
 .author-bio strong {
   font-weight: 500;
@@ -913,36 +844,6 @@ nav {
 .author-bio em {
   font-style: italic;
   color: var(--charcoal);
-}
-
-.author-contact-line {
-  margin-top: 2.4rem;
-  padding-top: 1.6rem;
-  border-top: 0.5px solid var(--rule);
-  font-size: 0.86rem;
-  color: var(--charcoal-mid);
-  font-weight: 300;
-}
-
-.author-contact-line a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 0.5px solid rgba(92,74,30,0.35);
-  transition: border-color 0.25s;
-}
-
-.author-contact-line a:hover {
-  border-bottom-color: var(--accent);
-}
-
-.author-contact-line .contact-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--charcoal-light);
-  font-weight: 400;
-  display: block;
-  margin-bottom: 0.55rem;
 }
 
 @media (max-width: 860px) {
@@ -1030,13 +931,6 @@ nav {
 
 .contact-val a:hover { border-bottom-color: var(--accent-pale); }
 
-.contact-val .contact-pending {
-  color: rgba(246,242,233,0.55);
-  font-style: italic;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-}
-
 @media (max-width: 860px) {
   .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   .contact-row { grid-template-columns: 1fr; gap: 0.3rem; }
@@ -1099,7 +993,7 @@ footer {
 <header class="masthead" id="top">
   <p class="masthead-eyebrow reveal">Independent published analysis</p>
   <h1 class="masthead-title reveal delay-1">The <em>Price Reporting</em><br>Standard</h1>
-  <p class="masthead-descriptor reveal delay-2">Delivering impact-led mapping of regulatory requirements to determine the changes that flow through price discovery — for commodity and financial benchmark administrators and the institutions that depend on them.</p>
+  <p class="masthead-descriptor reveal delay-2">The reference point for independent analysis on commodity benchmark compliance, price reporting governance and the regulatory frameworks shaping price discovery.</p>
 </header>
 
 <div class="reg-strip">
@@ -1385,7 +1279,7 @@ footer {
 <section class="section" id="frameworks">
   <div class="section-header">
     <span class="section-label">Frameworks &amp; resources</span>
-    <span class="section-count">Operational tools · Continuous build</span>
+    <span class="section-count">Operational architecture · Continuous build</span>
   </div>
 
   <div class="tool-feature reveal">
@@ -1404,47 +1298,11 @@ footer {
         <li>A structural reading of IODEX against public data</li>
         <li>Reading the system over time: drift, feedback and trajectory</li>
       </ul>
-      <a class="tool-feature-download" href="continuous-compliance-assurance.pdf" target="_blank" rel="noopener">Download the framework</a>
-      <p class="tool-feature-meta">PDF · 26 pages</p>
+      <button class="tool-feature-engage" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Discuss this framework</button>
+      <p class="tool-feature-meta">PDF · 26 pages · Available on request</p>
     </div>
   </div>
 
-  <div class="frameworks-list">
-    <div class="framework-item reveal">
-      <div class="framework-icon">19</div>
-      <div>
-        <div class="framework-title">IOSCO Self-Assessment Tool</div>
-        <div class="framework-desc">Interactive assessment of a benchmark governance framework against all 19 IOSCO Principles. Gap summary with prioritised remediation guidance, designed for use ahead of an annual assurance review.</div>
-        <div class="framework-status">Coming soon</div>
-      </div>
-    </div>
-    <div class="framework-item reveal delay-1">
-      <div class="framework-icon">⊕</div>
-      <div>
-        <div class="framework-title">Oversight Committee Design Framework</div>
-        <div class="framework-desc">Structure, composition, terms of reference and operating cadence for a compliant IOSCO oversight committee. Written from operational experience inside a regulated PRA.</div>
-        <div class="framework-status">Coming soon</div>
-      </div>
-    </div>
-    <div class="framework-item reveal">
-      <div class="framework-icon">≡</div>
-      <div>
-        <div class="framework-title">Global Mapping of Price Discovery Rules</div>
-        <div class="framework-desc">Consolidating the rule frameworks governing price discovery across markets — IOSCO, UK and EU benchmark regulation, Chinese price reporting rules and other emerging jurisdictions — in a single comparative map.</div>
-        <div class="framework-status">Coming soon</div>
-      </div>
-    </div>
-    <div class="framework-item reveal delay-1">
-      <div class="framework-icon">∾</div>
-      <div>
-        <div class="framework-title">NDRC &amp; SAMR Audit Methodology Overview</div>
-        <div class="framework-desc">The structure of an independent price reporting audit conducted under the National Development and Reform Commission, in conjunction with the State Administration for Market Regulation — what is examined, how evidence is presented and what Western PRAs with Chinese coverage consistently underestimate.</div>
-        <div class="framework-status">Coming soon</div>
-      </div>
-    </div>
-  </div>
-
-  <p style="margin-top: 2.6rem; font-size: 0.86rem; color: var(--charcoal-light); font-style: italic; font-family: var(--font-display); max-width: 600px;">The continuous compliance assurance framework is the first operational release. Further tools are added on a continuous build cadence as primary-source work is completed, with the IOSCO Self-Assessment Tool the next deliverable.</p>
 </section>
 
 <section class="section" id="intelligence">
@@ -1580,15 +1438,15 @@ footer {
     <div class="reveal">
       <h3 class="author-name">Karim <em>Bihi</em></h3>
       <p class="author-role">Author · The Price Reporting Standard</p>
-      <p class="author-credit-line">Independent published analysis on commodity benchmark and regulatory compliance, drawn from operational experience inside an IOSCO-aligned PRA and the regulated FX market.</p>
+      <p class="author-credit-line">Independent analysis on commodity benchmark and regulatory compliance, drawn from operational experience inside an IOSCO-aligned PRA and the regulated FX market.</p>
     </div>
 
     <div class="author-bio reveal delay-1">
-      <p>The Price Reporting Standard is an independent publication on commodity benchmark and regulatory compliance — making visible the analytical thinking that the field traditionally produces only inside firms, inside audit teams or behind paywalls in trade press.</p>
+      <p>The Price Reporting Standard publishes independent analysis on commodity benchmark and regulatory compliance — making visible the thinking that the field produces only inside firms, inside audit teams or behind paywalls in trade press.</p>
 
-      <p>The work draws on five years of operational compliance experience — three years inside an IOSCO-aligned commodity PRA, leading the IOSCO assurance programme, designing the oversight committee architecture and acting as the lead point of contact for the audit of price reporting activity in China conducted under the National Development and Reform Commission, in conjunction with the State Administration for Market Regulation; and two years inside the regulated FX market, where the same governance, integrity and methodology questions present in their statutory form. That dual operational vantage runs through every piece of analysis published here.</p>
+      <p>The work draws on five years of operational experience — three years inside an IOSCO-aligned commodity PRA, leading the IOSCO assurance programme, designing the oversight committee architecture and acting as the lead contact for the audit of price reporting activity in China conducted under the National Development and Reform Commission, in conjunction with the State Administration for Market Regulation; and two years inside the regulated FX market, where the same governance, integrity and methodology questions present in their statutory form.</p>
 
-      <p>The publication continues on a continuous build cadence — analysis, intelligence tracking and operational frameworks added as primary-source work is completed.</p>
+      <p>Engagements are available to PRAs, assurance providers and institutions navigating IOSCO compliance, benchmark regulation and the Chinese regulatory environment. The conversation starts with the work.</p>
     </div>
   </div>
 </section>
@@ -1597,8 +1455,8 @@ footer {
   <div class="contact-inner">
     <div class="reveal">
       <span class="section-label">Contact</span>
-      <h2 class="contact-heading">Available for senior roles &amp; engagements.</h2>
-      <p class="contact-sub">Open to permanent compliance leadership positions, contractor engagements with PRAs and financial benchmark administrators, and selective advisory work for institutions navigating IOSCO assurance, UK and EU benchmark regulation and the Chinese regulatory environment.</p>
+      <h2 class="contact-heading">The work is the introduction.<br>The conversation is next.</h2>
+      <p class="contact-sub">Engagements with PRAs, assurance providers and institutions navigating IOSCO compliance, benchmark regulation transition and the Chinese regulatory environment. If the analysis speaks to your situation, reach out directly.</p>
     </div>
     <div class="contact-rows reveal delay-1">
       <div class="contact-row">
@@ -1610,8 +1468,8 @@ footer {
         <div class="contact-val">Commodity benchmark &amp; regulatory compliance</div>
       </div>
       <div class="contact-row">
-        <div class="contact-key">Availability</div>
-        <div class="contact-val">Senior roles &amp; contractor engagements</div>
+        <div class="contact-key">Engagements</div>
+        <div class="contact-val">PRAs · Assurance providers · Benchmark administrators</div>
       </div>
       <div class="contact-row">
         <div class="contact-key">Location</div>
