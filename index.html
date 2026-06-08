@@ -241,7 +241,7 @@ nav {
 
 .analysis-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0;
   border-top: 0.5px solid var(--rule);
 }
@@ -256,6 +256,12 @@ nav {
 }
 
 .analysis-card:nth-child(2) {
+  padding-left: 2rem;
+  padding-right: 0;
+  border-right: 0.5px solid var(--rule);
+}
+
+.analysis-card:nth-child(3) {
   padding-left: 2rem;
   padding-right: 0;
   border-right: none;
@@ -328,7 +334,7 @@ nav {
 
 @media (max-width: 920px) {
   .analysis-grid { grid-template-columns: 1fr; }
-  .analysis-card, .analysis-card:nth-child(2) {
+  .analysis-card, .analysis-card:nth-child(2), .analysis-card:nth-child(3) {
     border-right: none;
     padding: 2.4rem 0;
   }
@@ -1017,7 +1023,7 @@ footer {
 <section class="section" id="analysis">
   <div class="section-header">
     <span class="section-label">Current analysis</span>
-    <span class="section-count">April 2026</span>
+    <span class="section-count">June 2026</span>
   </div>
 
   <div class="analysis-grid">
@@ -1035,6 +1041,14 @@ footer {
       <div class="card-tag">IOSCO · Cross-domain</div>
       <h2 class="card-title">The <em>grounding logic</em> of IOSCO and its universality across regulated reporting regimes</h2>
       <p class="card-excerpt">Stripping back the IOSCO Principles reveals a grounding logic that runs through every regulated reporting regime — methodology control, data integrity, challenge mechanisms, failure response. Mastery of one regime transfers because the underlying framework is the same.</p>
+      <div class="card-read">Read analysis</div>
+    </div>
+
+    <div class="analysis-card reveal delay-2" onclick="toggleArticle('landscape')">
+      <div class="card-num">— 03</div>
+      <div class="card-tag">Compliance Architecture · Prediction</div>
+      <h2 class="card-title">The compliance architecture of price reporting — <em>where the market is heading</em></h2>
+      <p class="card-excerpt">Three structural shifts are already in motion — the bifurcation of the regulatory framework, the tightening of the Chinese regulatory perimeter and the structural limit of the annual assurance opinion. Each is visible in what the market has already done. Each will force decisions the compliance function cannot defer.</p>
       <div class="card-read">Read analysis</div>
     </div>
 
@@ -1271,6 +1285,74 @@ footer {
       <p class="article-pullquote">That is why mastery of IOSCO transfers. The same grounding logic applies across financial services regulation, professional conduct supervision, energy market oversight and trade transparency. The substantive expertise differs by domain. The mode of thought is the same.</p>
 
       <p class="article-footer-note">Karim Bihi · The Price Reporting Standard</p>
+    </div>
+  </article>
+
+  <article class="article-expanded" id="article-landscape">
+    <button class="article-close" onclick="closeArticle('landscape')" aria-label="Close article">×</button>
+    <div class="article-meta">June 2026 · Compliance Architecture</div>
+    <h2 class="article-heading">The compliance architecture of price reporting — <em>where the market is heading</em></h2>
+    <div class="article-body">
+
+      <p class="lead">The annual assurance opinion produced under the IOSCO Principles for Price Reporting Agencies — the International Organization of Securities Commissions' voluntary global standards for benchmark governance — has served the commodity benchmark market well. It established a credible external standard, created accountability where none previously existed and gave benchmark users a governance signal they could rely on. It was built for the world it arrived in. That world is changing, and the opinion is changing with it — not by design, but because the pressures accumulating around it are structural rather than incidental.</p>
+
+      <p>Three shifts are already in motion. Each is visible in what the market has already done, not in what it might do. Each carries specific implications for the compliance function inside a price reporting agency (PRA) and for the assurance providers whose practices are built around it. Taken together they describe a compliance architecture that will look materially different by the end of this decade from the one that exists today.</p>
+
+      <p>This piece names each shift, argues it from the evidence already in the public record, and draws the operational implication plainly. It does not predict the unpredictable. It identifies the trajectories that are already running.</p>
+
+      <h3>The regulatory framework is bifurcating — and compliance cannot remain uniform</h3>
+
+      <p>The EU Benchmark Regulation amendments (EU BMR) that took effect on 1 January 2026 removed an estimated eighty to ninety percent of benchmark administrators from statutory scope. The Specified Authorised Benchmarks Regime (SABR) proposed by HM Treasury in December 2025 signals an equivalent concentration in the UK — designation limited to systemically important benchmarks, with the Financial Conduct Authority (FCA) retaining discretion to write the substantive requirements for designated administrators from scratch, without the Annex II commodity-specific provisions that currently structure the compliance obligation.</p>
+
+      <p>Two things are happening simultaneously. The statutory perimeter is narrowing to concentrate regulatory weight on the benchmarks that matter most systemically. And the compliance obligation for those benchmarks is, if anything, becoming more demanding — not less — because designated status under SABR and critical benchmark status under EU BMR attract the full force of a regulatory regime that is no longer diluted across a large population of minor indices.</p>
+
+      <p>The result is a bifurcation. At the top of the portfolio, where benchmarks settle derivative contracts and anchor physical term pricing across global supply chains, the compliance architecture must be built to survive designation scrutiny — evidence-based, continuously maintainable and defensible to a regulator who has chosen to concentrate its attention. Below that tier, the statutory obligation has been removed, and the compliance question is no longer regulatory but commercial: what governance is necessary to maintain market credibility when the regulator is no longer requiring it?</p>
+
+      <p>These are not questions that can be answered with a single compliance framework applied uniformly across the portfolio. They require differentiation — and differentiation requires an honest assessment of where each benchmark sits and what its users actually expect of it. The compliance function that treats a tier one designated benchmark and a tier three voluntary-alignment benchmark as carrying the same compliance burden is overengineered in one direction and potentially exposed in the other.</p>
+
+      <p>The practical implication is that the annual assurance review, currently scoped across the full portfolio, will need to be redesigned. Not abandoned, but restructured to reflect a market that no longer treats all benchmarks as equivalent. The scope, the evidence standard and the auditor relationship will all need to be differentiated by tier. The compliance functions that begin that redesign ahead of designation — rather than in response to it — will produce a stronger evidence position and a more defensible cost structure.</p>
+
+      <hr>
+
+      <h3>The Chinese regulatory perimeter is tightening — and most Western PRAs are unprepared</h3>
+
+      <p>The most consequential compliance development for commodity price reporting over the next five years is not happening in London or Brussels. It is happening in Beijing, and it has been accumulating quietly in the regulatory architecture for longer than most Western compliance functions have been watching it.</p>
+
+      <p>China's data sovereignty framework — the Data Security Law (DSL), the Personal Information Protection Law (PIPL), the Cybersecurity Law (CSL) and the Counter-Espionage Law as amended in 2023 — applies to data generated or processed within Chinese territory, including price data submitted by Chinese market participants to overseas benchmark administrators. The National Development and Reform Commission (NDRC) and the State Administration for Market Regulation (SAMR) have established audit and oversight mechanisms for commodity price reporting activity that engages Chinese market participants and Chinese-origin data. Those mechanisms are not theoretical. They have been applied.</p>
+
+      <p>The compliance implications for a Western PRA publishing benchmarks for iron ore, thermal coal, copper, aluminium or any commodity where Chinese market participants are material contributors are significant and have not been adequately addressed in the compliance architectures most PRAs currently operate. The question of whether a Chinese steel mill's bid submitted to a London-based PRA constitutes data generated within China for the purposes of the DSL is not settled. The question of what audit rights the NDRC may assert over a PRA's China-origin data flows is not settled. The question of what cross-border data transfer obligations apply when assessment results are published globally is not settled.</p>
+
+      <p>What is settled is that these questions exist, that the regulatory trajectory is toward tighter enforcement rather than looser, and that the PRA which has not mapped its China exposure against the data sovereignty framework has not assessed its compliance position — it has simply not looked at it.</p>
+
+      <p>The firms that have operational experience of how an NDRC audit is structured, what it examines, how evidence is presented and what Western PRAs consistently underestimate about it are a small group. That knowledge is not widely distributed in the market, and it is not available in the annual IOSCO assurance opinion, which does not reach Chinese regulatory exposure at all. The compliance function that builds this understanding before it is required by a regulator will be positioned. The one that encounters it for the first time under examination will be managing a crisis rather than a compliance programme.</p>
+
+      <p>There is also a commercial dimension that the compliance analysis alone does not capture. China is the world's largest consumer of most base metals and thermal coal. The benchmarks that matter most for Chinese procurement, financing and derivative hedging are precisely the benchmarks most likely to attract Chinese regulatory attention. An administrator whose compliance architecture cannot demonstrate credible governance of its China-origin data is an administrator whose benchmarks may, over time, find their commercial position in Chinese markets eroding — not through regulatory prohibition but through the quiet preference of Chinese counterparties for price references whose governance they understand.</p>
+
+      <hr>
+
+      <h3>The annual opinion is reaching the limit of what periodic engagement can establish</h3>
+
+      <p>The most structurally significant shift is also the most difficult to state plainly, because it implicates the instrument the market has relied on for over a decade. The annual IOSCO assurance opinion is a periodic engagement. It is designed to confirm, at a point in time, that the policies, processes and controls governing a PRA's benchmark administration are consistent with the IOSCO Principles. It does that well. The question is whether that is the right question.</p>
+
+      <p>The IODEX reading — IODEX being the Platts iron ore index, the world's most widely referenced seaborne iron ore benchmark — set out in the continuous compliance assurance framework published on this site demonstrates the point precisely. Through 2024 and 2025, the dominant iron ore brands supplied by BHP and Rio Tinto drifted below the 62 percent iron content anchor on which IODEX and its entire derivative complex are built. Read cycle by cycle, nothing failed. The methodology was applied faithfully. The normalisation machinery performed exactly as designed. A conformance assessment conducted at any point in that period would have returned compliant. But a reading of the system over time — tracking the relationship between the base specification and the physical market across cycles — would have identified the drift and its trajectory before it forced the structural correction that ultimately arrived: the migration from 62 to 61 percent iron and the introduction of a 61 percent equivalent to carry the derivative complex across.</p>
+
+      <p>This is not a criticism of Platts, whose operation is among the most transparent in the market, nor of the assurance providers who reviewed it. It is an observation about the structural limit of periodic engagement as a compliance instrument. A periodic review confirms the state of the system at the moment of review. It cannot establish the direction the system is travelling, the rate at which it is drifting, or the point at which a currently compliant position will become contingent on circumstances the operation does not control.</p>
+
+      <p>The compliance states that matter most — methodology defective while the operation masks it through analyst competence, operation compensating for a methodology gap through judgement the methodology does not authorise, system absorbing structural change without the adaptive response that would correct it — are precisely the states that do not appear in a single-cycle reading. They are visible only across cycles, in the comparison between what the system looked like twelve months ago and what it looks like today.</p>
+
+      <p>The direction the market is moving is toward continuous internal assurance as the primary instrument, with periodic external review functioning as a checkpoint within a continuous activity rather than the activity itself. This is not a displacement of the external opinion — it is a maturation of the compliance architecture around it. The external opinion becomes more credible, not less, when it reviews a system that has been continuously monitored rather than prepared for annual inspection. The auditor who walks into a continuous assurance environment produces better findings more efficiently. The compliance function that operates one produces a stronger evidence position and surfaces remediation before it becomes regulatory exposure.</p>
+
+      <p>The firms that build this architecture ahead of market expectation will find themselves in a different commercial and regulatory position from those that wait to be required. The annual opinion was always a floor, not a ceiling. The compliance functions that treated it as a ceiling are now facing a market that is beginning to ask what sits above it.</p>
+
+      <div class="article-rule"></div>
+
+      <p class="article-pullquote">The compliance architecture that serves this market for the next decade will not look like the one that has served it for the last. The bifurcation is structural. The Chinese regulatory trajectory is directional. The limit of periodic engagement is observable in the public record. Each is already running. The question for every compliance function in this market is not whether these shifts will arrive, but which of them it is already positioned for.</p>
+
+      <p>The IOSCO Principles were written to protect the integrity of the price. That purpose does not change. What changes is the architecture required to meet it — in a market where statutory scope has concentrated, where Chinese regulatory authority over commodity data flows is being actively asserted, and where the most consequential compliance states are the ones a periodic engagement is structurally unable to see.</p>
+
+      <p>The compliance function that reads these shifts as administrative change has misread them. They are competitive and strategic. The administrators that build for the architecture these shifts require — differentiated by tier, configured for cross-jurisdictional exposure and capable of continuous rather than periodic assurance — will hold a compliance position that is genuinely defensible. The ones that do not will hold the appearance of one.</p>
+
+      <p class="article-footer-note">Karim Bihi · The Price Reporting Standard · June 2026</p>
     </div>
   </article>
 
