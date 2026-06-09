@@ -241,7 +241,7 @@ nav {
 
 .analysis-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
   border-top: 0.5px solid var(--rule);
 }
@@ -255,13 +255,13 @@ nav {
   position: relative;
 }
 
-.analysis-card:nth-child(2) {
-  padding-left: 2rem;
-  padding-right: 0;
+.analysis-card:nth-child(odd) {
+  padding-right: 2rem;
+  padding-left: 0;
   border-right: 0.5px solid var(--rule);
 }
 
-.analysis-card:nth-child(3) {
+.analysis-card:nth-child(even) {
   padding-left: 2rem;
   padding-right: 0;
   border-right: none;
@@ -334,7 +334,7 @@ nav {
 
 @media (max-width: 920px) {
   .analysis-grid { grid-template-columns: 1fr; }
-  .analysis-card, .analysis-card:nth-child(2), .analysis-card:nth-child(3) {
+  .analysis-card, .analysis-card:nth-child(odd), .analysis-card:nth-child(even) {
     border-right: none;
     padding: 2.4rem 0;
   }
@@ -1028,27 +1028,35 @@ footer {
 
   <div class="analysis-grid">
 
-    <div class="analysis-card reveal" onclick="toggleArticle('sabr')">
+    <div class="analysis-card reveal" onclick="toggleArticle('localisation')">
       <div class="card-num">— 01</div>
+      <div class="card-tag">Cross-Jurisdictional · China</div>
+      <h2 class="card-title">The <em>localisation paradox</em></h2>
+      <p class="card-excerpt">The commodity benchmark market is bringing its China assessments onshore — Shanghai publication times, yuan denomination, in-China delivery, mainland data submitters. Each step improves the assessment and deepens its exposure under China's data sovereignty framework. The same decisions, read from two directions, and almost nobody is reading the second.</p>
+      <div class="card-read">Read analysis</div>
+    </div>
+
+    <div class="analysis-card reveal delay-1" onclick="toggleArticle('landscape')">
+      <div class="card-num">— 02</div>
+      <div class="card-tag">Compliance Architecture · Prediction</div>
+      <h2 class="card-title">The compliance architecture of price reporting — <em>where the market is heading</em></h2>
+      <p class="card-excerpt">Three structural shifts are already in motion — the bifurcation of the regulatory framework, the tightening of the Chinese regulatory perimeter and the structural limit of the annual assurance opinion. Each is visible in what the market has already done. Each will force decisions the compliance function cannot defer.</p>
+      <div class="card-read">Read analysis</div>
+    </div>
+
+    <div class="analysis-card reveal delay-2" onclick="toggleArticle('sabr')">
+      <div class="card-num">— 03</div>
       <div class="card-tag">SABR · Designation</div>
       <h2 class="card-title">In light of <em>SABR</em>, an opportunity to position internal designation likelihood ahead of the final framework</h2>
       <p class="card-excerpt">Within the existing commodity benchmark clusters, designation will become a new layer of competitive positioning. Re-stratification is the more likely outcome than relief — and the firms with internal designation likelihood assessments will be positioned when the framework is published.</p>
       <div class="card-read">Read analysis</div>
     </div>
 
-    <div class="analysis-card reveal delay-1" onclick="toggleArticle('iosco')">
-      <div class="card-num">— 02</div>
+    <div class="analysis-card reveal delay-3" onclick="toggleArticle('iosco')">
+      <div class="card-num">— 04</div>
       <div class="card-tag">IOSCO · Cross-domain</div>
       <h2 class="card-title">The <em>grounding logic</em> of IOSCO and its universality across regulated reporting regimes</h2>
       <p class="card-excerpt">Stripping back the IOSCO Principles reveals a grounding logic that runs through every regulated reporting regime — methodology control, data integrity, challenge mechanisms, failure response. Mastery of one regime transfers because the underlying framework is the same.</p>
-      <div class="card-read">Read analysis</div>
-    </div>
-
-    <div class="analysis-card reveal delay-2" onclick="toggleArticle('landscape')">
-      <div class="card-num">— 03</div>
-      <div class="card-tag">Compliance Architecture · Prediction</div>
-      <h2 class="card-title">The compliance architecture of price reporting — <em>where the market is heading</em></h2>
-      <p class="card-excerpt">Three structural shifts are already in motion — the bifurcation of the regulatory framework, the tightening of the Chinese regulatory perimeter and the structural limit of the annual assurance opinion. Each is visible in what the market has already done. Each will force decisions the compliance function cannot defer.</p>
       <div class="card-read">Read analysis</div>
     </div>
 
@@ -1356,6 +1364,66 @@ footer {
     </div>
   </article>
 
+  <article class="article-expanded" id="article-localisation">
+    <button class="article-close" onclick="closeArticle('localisation')" aria-label="Close article">×</button>
+    <div class="article-meta">June 2026 · Cross-Jurisdictional Exposure</div>
+    <h2 class="article-heading">The <em>localisation paradox</em></h2>
+    <div class="article-body">
+
+      <p class="lead">A price reporting agency that moves an assessment closer to the market it measures is doing its job. A price reporting agency that moves an assessment into Chinese territory is, by the same act, moving it under a regulatory regime most Western compliance functions have not assessed. These are not two decisions. They are one decision, read from two directions, and almost nobody in this market is reading it from the second.</p>
+
+      <p>The commodity benchmark market is localising. Assessments that once sat at arm's length from China — priced in dollars, published on a London or Singapore clock, delivered on a seaborne basis — are being progressively brought onshore. Publication times are moving to Chinese hours. Assessments are being denominated in yuan. Delivery bases are shifting to in-warehouse and ex-works China. Data submitters are being recruited inside the mainland. Each step is rational, defensible and in most cases explicitly requested by the market. Each step also moves the underlying price data closer to the definition of data generated and processed within Chinese territory — the trigger condition for a body of law that carries audit rights, cross-border transfer restrictions and enforcement powers most price reporting agencies have never modelled against their own operations.</p>
+
+      <p>This piece sets out the trend, names the regulatory trigger, and draws the paradox plainly. It is not an argument against localisation. Localisation is correct. It is an argument that the compliance consequence of localisation is not being read alongside the commercial benefit, and that the two have to be read together.</p>
+
+      <h3>The market is moving onshore — for good reasons</h3>
+
+      <p>The localisation of China-facing commodity assessments is visible across the public record of every major price reporting agency (PRA) with significant Chinese coverage. The pattern is consistent because the commercial logic is universal: China is the dominant consuming market for most base metals, steelmaking raw materials and battery materials, and an assessment that does not reflect the way the Chinese market actually transacts is an assessment that loses relevance.</p>
+
+      <p>Fastmarkets provides a clearly documented illustration. In 2026 it moved the publication of its iron ore 61% Fe fines FOT Qingdao indices from a Singapore timestamp to a Shanghai timestamp, explicitly to align with the Chinese pricing day. It publishes iron ore assessments denominated in yuan per wet tonne on an FOT Qingdao basis — a price formed inside a Chinese port, in Chinese currency, on a Chinese clock. It publishes a wide range of assessments on ex-works mainland China, in-warehouse China and FOB China bases. And in its lithium methodology consultations it openly invites Chinese market participants to become data submitters, recruiting the input data directly from inside the territory. None of this is unusual. It is what a serious PRA does when it is committed to measuring the Chinese market accurately, and Fastmarkets is among the more transparent and methodologically rigorous administrators in the sector. The point is not that any of these decisions is wrong. The point is what they amount to when read together.</p>
+
+      <p>What they amount to is an assessment whose inputs are sourced within China, whose price is formed on a Chinese delivery basis, whose currency is the yuan and whose publication is timed to the Chinese day. Read commercially, that is an assessment doing exactly what it should. Read against the data sovereignty framework, it is an assessment whose entire production chain now sits substantially within Chinese jurisdiction.</p>
+
+      <hr>
+
+      <h3>The regulatory trigger most compliance functions have not modelled</h3>
+
+      <p>China's data sovereignty framework rests on three principal statutes. The Data Security Law (DSL), in force since September 2021, governs data processing activities and assigns obligations based on data classification and the territory in which processing occurs. The Personal Information Protection Law (PIPL), in force since November 2021, governs personal information and imposes strict conditions on its cross-border transfer. The Cybersecurity Law (CSL), in force since 2017, establishes data localisation and security review requirements for data generated within China. Around these sits the Counter-Espionage Law, amended in 2023 to broaden the definition of espionage to include the transfer of data relating to national security, with the scope of what constitutes national security left deliberately wide.</p>
+
+      <p>The operative concept across this framework is territory. The obligations attach to data generated or processed within the People's Republic. A price submission made by a Chinese steel mill, a Chinese trader or a Chinese refiner — captured by a PRA's reporter, recorded in the PRA's systems and used to construct a published assessment — is data generated within Chinese territory. When that submission is held, processed and then transferred out of China to a London or Singapore pricing operation for publication, it is, on a plain reading of the framework, a cross-border transfer of China-origin data.</p>
+
+      <p>The questions this raises are not settled, and that is precisely the problem. Whether a single anonymised price point constitutes regulated data under the DSL's classification regime is not settled. Whether the aggregate flow of Chinese transaction data to an overseas benchmark administrator crosses the threshold that triggers a security review is not settled. What audit rights the National Development and Reform Commission (NDRC) and the State Administration for Market Regulation (SAMR) may assert over a PRA's China-origin data flows is not settled. What is settled is that the framework applies to exactly the kind of data a localised assessment is built on, that the enforcement trajectory is tightening rather than loosening, and that a PRA which has localised its assessments without mapping them against this framework has increased its exposure without measuring it.</p>
+
+      <hr>
+
+      <h3>The paradox</h3>
+
+      <p>Here is the structure of the problem stated plainly. The decisions that make a China-facing assessment more accurate, more relevant and more commercially valuable are the same decisions that increase its exposure under the data sovereignty framework. They are not in tension at the level of intent. They are the same act.</p>
+
+      <p>Move the publication time onshore to reflect the Chinese trading day, and the assessment is better — and more clearly tied to Chinese territory. Denominate in yuan to match how the market actually prices, and the assessment is better — and more clearly a domestic Chinese price. Recruit data submitters inside the mainland to deepen the input pool, and the assessment is better — and more clearly built on data generated within China. Shift to an in-warehouse China delivery basis to capture the portside market that now dominates Chinese iron ore trade, and the assessment is better — and more clearly a measurement of activity occurring inside the territory. Each improvement is a step deeper into the jurisdiction.</p>
+
+      <p>The compliance function and the commercial function are, in most PRAs, optimising the same decisions from opposite ends and never meeting in the middle. The commercial side sees market fidelity improving. The compliance side, if it is looking at all, is looking at IOSCO conformance — the annual assurance opinion against the IOSCO Principles for Price Reporting Agencies — which does not reach Chinese data sovereignty exposure at all. The IOSCO opinion was not built to ask whether a localised assessment has walked into the scope of the DSL. So the exposure accumulates in the space between two functions, each doing its job, neither reading the other's consequence.</p>
+
+      <p>This is the same structural blindness that runs through every argument on this site. Compliance is not a property of any single decision. It is the emergent state of how decisions interact. A localisation decision is commercially sound and regulatorily consequential at the same time, and a compliance architecture that reads only one dimension of it has not assessed the decision — it has assessed half of it.</p>
+
+      <hr>
+
+      <h3>What this requires</h3>
+
+      <p>The remedy is not de-localisation. Pulling assessments back offshore to reduce data sovereignty exposure would degrade the very market fidelity that makes them valuable, and would itself be a methodology decision with its own IOSCO consequences. The remedy is to read the localisation decision in both dimensions before it is made, not after.</p>
+
+      <p>Concretely, that means a PRA with material Chinese coverage mapping its assessment portfolio against the data sovereignty framework the way it already maps it against IOSCO — identifying which assessments draw on China-origin data, which have localised to the point of plausibly sitting within the territorial scope of the DSL and PIPL, what the cross-border transfer position is for each, and what an NDRC or SAMR enquiry would actually examine if it arrived. That map does not exist in the annual assurance opinion. It is not produced by any current external assurance instrument. And it requires an understanding of how Chinese regulatory oversight of commodity price reporting actually operates — what it examines, how evidence is presented, what Western administrators consistently underestimate — that is held by very few people in this market.</p>
+
+      <p>The PRA that builds this map before it is required by a regulator holds a defensible position. The one that builds it during an enquiry is managing a crisis. The difference between the two is whether the compliance function read the localisation decision in both dimensions while it was still a choice, or only in one while the exposure quietly accumulated underneath an assessment that looked, by every IOSCO measure, entirely sound.</p>
+
+      <div class="article-rule"></div>
+
+      <p class="article-pullquote">The market is localising because localisation is correct. The exposure is accumulating because the second dimension of a correct decision is not being read. A benchmark can be improving on every commercial and methodological measure and walking deeper into a regulatory regime nobody has mapped, through the very same decisions, at the very same time. That is the paradox, and it will not resolve itself.</p>
+
+      <p class="article-footer-note">Karim Bihi · The Price Reporting Standard · June 2026</p>
+    </div>
+  </article>
+
 </section>
 
 <section class="section" id="frameworks">
@@ -1526,9 +1594,9 @@ footer {
     <div class="author-bio reveal delay-1">
       <p>The Price Reporting Standard publishes independent analysis on commodity benchmark and regulatory compliance — making visible the thinking that the field produces only inside firms, inside audit teams or behind paywalls in trade press.</p>
 
-      <p>The work draws on five years of operational experience — three years inside an IOSCO-aligned commodity PRA, leading the IOSCO assurance programme, designing the oversight committee architecture and acting as the lead contact for the audit of price reporting activity in China conducted under the National Development and Reform Commission, in conjunction with the State Administration for Market Regulation; and two years inside the regulated FX market, where the same governance, integrity and methodology questions present in their statutory form.</p>
+      <p>The work draws on operational experience inside an IOSCO-aligned commodity PRA — leading the IOSCO assurance programme, designing the oversight committee architecture and acting as the lead contact for the audit of price reporting activity in China conducted under the National Development and Reform Commission, in conjunction with the State Administration for Market Regulation — and inside the regulated FX market, where the same governance, integrity and methodology questions present in their statutory form.</p>
 
-      <p>Engagements are available to PRAs, assurance providers and institutions navigating IOSCO compliance, benchmark regulation and the Chinese regulatory environment. The conversation starts with the work.</p>
+      <p>Engagements are available to PRAs, assurance providers and institutions navigating IOSCO compliance, benchmark regulation and the Chinese regulatory environment.</p>
     </div>
   </div>
 </section>
